@@ -17,7 +17,7 @@ const SentEmailView = () => {
     const navigate = useNavigate()
     useEffect(()=>{
         if(token && emailId){
-            fetch('http://localhost:5000/email/singleEmail',{
+            fetch('https://forever-server-8try.onrender.com/email/singleEmail',{
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ const SentEmailView = () => {
 
     const undoEmail =()=>{
         if(token && emailId){
-            fetch('http://localhost:5000/email/undoEmail',{
+            fetch('https://forever-server-8try.onrender.com/email/undoEmail',{
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',

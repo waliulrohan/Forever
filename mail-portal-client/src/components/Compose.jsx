@@ -64,7 +64,7 @@ const Compose = ({ openCompose, setOpenCompose }) => {
             if(!attachment){
                 if (subject && to && body) {
                     setWait(true)
-                fetch('http://localhost:5000/email/send', {
+                fetch('https://forever-server-8try.onrender.com/email/send', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -111,7 +111,7 @@ const Compose = ({ openCompose, setOpenCompose }) => {
                         const result = await response.json();
                         if(token && result.secure_url){
 
-                                fetch('http://localhost:5000/email/send', {
+                                fetch('https://forever-server-8try.onrender.com/email/send', {
                                     method: 'POST',
                                     headers: {
                                         'Content-Type': 'application/json',

@@ -9,16 +9,16 @@ const Emails = () => {
   const [loading , setLoading] = useState(true)  
   useEffect(()=>{
       if(token){
-          fetch('http://localhost:5000/email/myEmails',{
+          fetch('https://forever-server-8try.onrender.com/email/myEmails',{
               headers: {
                 'Content-Type': 'application/json',
                 'authorization': `Bearer ${token}`
               }
             }).then(res => res.json() ).then(data =>{
+              setLoading(false)
               if (data.error) {
                 toaster(data.error);
               }else{
-                setLoading(false)
                   setEmails(data.emails)
               }
 

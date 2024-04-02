@@ -17,7 +17,7 @@ const Profile = () => {
     
     useEffect(()=>{
         if(token && userId){
-            fetch('http://localhost:5000/user/userData',{
+            fetch('https://forever-server-8try.onrender.com/user/userData',{
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',

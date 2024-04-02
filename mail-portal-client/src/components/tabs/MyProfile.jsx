@@ -33,7 +33,7 @@ const MyProfile = () => {
           const result = await response.json();
           setImageUrl(result.secure_url);
           if(token && result.secure_url){
-            fetch('http://localhost:5000/user/uploadProfilePic',{
+            fetch('https://forever-server-8try.onrender.com/user/uploadProfilePic',{
               method: 'PUT',
               headers: {
                 'Content-Type': 'application/json',
@@ -118,7 +118,7 @@ const handleRemovePhoto = () => {
                   toaster('Already removed')
                 }else{
                   if(token ){
-                    fetch('http://localhost:5000/user/removeProfilePic',{
+                    fetch('https://forever-server-8try.onrender.com/user/removeProfilePic',{
                       method: 'PUT',
                       headers: {
                         'Content-Type': 'application/json',
@@ -149,7 +149,7 @@ const handleRemovePhoto = () => {
 };
     useEffect(()=>{
         if(token && myId){
-            fetch('http://localhost:5000/user/userData',{
+            fetch('https://forever-server-8try.onrender.com/user/userData',{
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',

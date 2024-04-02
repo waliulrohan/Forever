@@ -17,7 +17,7 @@ const Signin = () => {
         const {email , password} = data;
         if(email && password){     
                 setLoading(true)
-            fetch('http://localhost:5000/user/login',{
+            fetch('https://forever-server-8try.onrender.com/user/login',{
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json'
@@ -27,14 +27,15 @@ const Signin = () => {
                   password,
                 })
               }).then(res => res.json() ).then(data =>{
+                setLoading(false)
                 if (data.error) {
+
                     toaster(data.error);
                 }else{
                     toaster(data.message);
                    sessionStorage.setItem('token' , data.token);
                    sessionStorage.setItem('myId' , data._id);
                    sessionStorage.setItem('myPhoto' , data.photo);
-                   setLoading(false)
                    navigate("/");
                 }
 

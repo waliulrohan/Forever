@@ -20,7 +20,7 @@ const CreateAccount = () => {
           if (!emailRegex.test(email)) {
             toaster('Please use @forever')
           }else{
-            fetch('http://localhost:5000/user/signup',{
+            fetch('https://forever-server-8try.onrender.com/user/signup',{
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json'
@@ -31,10 +31,10 @@ const CreateAccount = () => {
                   password,
                 })
               }).then(res => res.json() ).then(data =>{
+                setLoading(false)
                 if (data.error) {
                     toaster(data.error)
                 }else{
-                  setLoading(false)
                    navigate("/auth/signin")
                     toaster(data.message)
                 }

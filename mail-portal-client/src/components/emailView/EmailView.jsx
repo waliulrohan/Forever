@@ -17,7 +17,7 @@ const EmailView = () => {
 
     useEffect(()=>{
         if(token && emailId){
-            fetch('http://localhost:5000/email/singleEmail',{
+            fetch('https://forever-server-8try.onrender.com/email/singleEmail',{
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ const EmailView = () => {
 
     const binEmail =()=>{
         if(token && emailId){
-            fetch('http://localhost:5000/email/binEmail',{
+            fetch('https://forever-server-8try.onrender.com/email/binEmail',{
                 method: 'PUT',
                 headers: {
                   'Content-Type': 'application/json',
@@ -66,7 +66,7 @@ const EmailView = () => {
     }
     const restoreEmail =()=>{
         if(token && emailId){
-            fetch('http://localhost:5000/email/restoreEmail',{
+            fetch('https://forever-server-8try.onrender.com/email/restoreEmail',{
                 method: 'PUT',
                 headers: {
                   'Content-Type': 'application/json',
@@ -89,7 +89,7 @@ const EmailView = () => {
     }
     const addStar =()=>{
         if(token && emailId){
-            fetch('http://localhost:5000/email/addStar',{
+            fetch('https://forever-server-8try.onrender.com/email/addStar',{
                 method: 'PUT',
                 headers: {
                   'Content-Type': 'application/json',
@@ -112,7 +112,7 @@ const EmailView = () => {
     }
     const removeStar =()=>{
         if(token && emailId){
-            fetch('http://localhost:5000/email/removeStar',{
+            fetch('https://forever-server-8try.onrender.com/email/removeStar',{
                 method: 'PUT',
                 headers: {
                   'Content-Type': 'application/json',
